@@ -392,3 +392,12 @@ powershell -ExecutionPolicy Bypass -File scripts\screenshot.ps1
 **10. 没有外网能用吗**
 能。前端资源全部本地，二维码本机生成；只有 QQ 官方机器人汇报需要能访问 QQ 开放平台接口。
 
+---
+
+## 九、开源协议
+
+本项目基于 [MIT License](LICENSE) 开源，欢迎学习、使用与二次开发，但请保留版权声明。
+
+> 运行数据（学生名单、填报记录、机器人 AppSecret 等）不属于开源内容，请自行妥善保管，切勿提交到公开仓库。
+
+
