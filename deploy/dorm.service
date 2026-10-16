@@ -1,0 +1,27 @@
+[Unit]
+Description=Dorm Management System (FastAPI)
+Documentation=file:///www/dorm/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/www/dorm
+# 数据（SQLite、导出的 Excel、备份）单独放到 /www/dorm-data，方便备份和扩容
+# 两个端口：8090 = 同学填报 + 寝室长界面；8091 = 管理员界面（都不占用 80）
+Environment=DORM_HOST=0.0.0.0
+Environment=DORM_PORT=8090
+Environment=DORM_ADMIN_PORT=8091
+Environment=DORM_DATA_DIR=/www/dorm-data
+Environment=DORM_TIMEZONE=Asia/Shanghai
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/www/dorm/.venv/bin/python run.py
+Restart=always
+RestartSec=5
+StandardOutput=append:/www/dorm-data/logs/service.log
+StandardError=append:/www/dorm-data/logs/service.log
+
+[Install]
+WantedBy=multi-user.target

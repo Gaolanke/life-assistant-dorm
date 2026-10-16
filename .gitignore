@@ -1,0 +1,44 @@
+# ===== 运行数据（含真实学生信息、机器人密钥、备份与日志，切勿提交）=====
+/data/
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+
+# ===== Python =====
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+
+# ===== 构建产物与临时目录 =====
+/build/
+*.zip
+*.tar.gz
+
+# ===== 真实业务数据文件（学生名单、班费明细等）=====
+*.xlsx
+*.xls
+
+# ===== 隐私内容：开发聊天记录（含服务器命令与机器人 AppSecret）=====
+/聊天记录/
+
+# ===== 软著申请材料（界面截图含真实学生姓名/手机号，成品文档嵌入了这些截图）=====
+/软著申请/
+
+# ===== docs 下的运行截图（可能含真实数据）；保留 .md/.txt/.docx 说明文档 =====
+/docs/screenshots/
+/docs/*.png
+/docs/*.jpg
+/docs/*.jpeg
+
+# ===== 系统/编辑器杂项 =====
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
